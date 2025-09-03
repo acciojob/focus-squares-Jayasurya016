@@ -1,29 +1,8 @@
-/* style.css */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
-.container {
-    display: flex;
-    gap: 20px;
-}
-
 .square {
-    width: 100px;
-    height: 100px; /* This is the fix. The original code was missing this. */
-    background-color: #E6E6FA; /* Lavender */
-    transition: background-color 0.3s ease;
-}
-
-.container:hover .square {
-    background-color: #6F4E37; /* Coffee */
-}
-
-.container .square:hover {
-    background-color: #E6E6FA; /* Lavender */
+  width: 100px;
+  height: 100px;
+  background-color: #E6E6FA; /* Lavender */
+  display: inline-block;
+  margin: 10px;
+  transition: background-color 0.3s ease;
 }
