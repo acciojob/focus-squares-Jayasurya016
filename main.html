@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Focus Squares</title>
+  <style>
+    .square {
+      width: 100px;
+      height: 100px;
+      background-color: #E6E6FA; /* Lavender */
+      display: inline-block;
+      margin: 10px;
+    }
+  </style>
 </head>
 <body>
   <div id="square1" class="square"></div>
   <div id="square2" class="square"></div>
   <div id="square3" class="square"></div>
 
-  <script type="text/javascript" src="script.js"></script>
+  <script>
+    const squares = document.querySelectorAll('.square');
+
+    squares.forEach((square) => {
+      square.addEventListener('mouseover', () => {
+        squares.forEach((sq) => {
+          if (sq === square) {
+            sq.style.backgroundColor = '#E6E6FA'; // keep hovered square Lavender
+          } else {
+            sq.style.backgroundColor = '#6F4E37'; // others to Coffee
+          }
+        });
+      });
+
+      square.addEventListener('mouseout', () => {
+        squares.forEach((sq) => {
+          sq.style.backgroundColor = '#E6E6FA'; // reset all back to Lavender
+        });
+      });
+    });
+  </script>
 </body>
 </html>
